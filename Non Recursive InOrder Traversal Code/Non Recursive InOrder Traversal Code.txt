@@ -1,0 +1,28 @@
+// Non Recursive InOrder Traversal Code
+//Only function of the code 
+// write the remaing part by yourself :)
+
+void Inorder(struct BinaryTreeNode *root)
+{
+    struct Node* current= root;
+    struct Node* S=NULL;
+    bool done=0;
+    
+    while(!done){
+        if(current!=NULL){
+            push(&S,current);
+            current = current->left;
+        }
+        else{
+            if(!isempty(S))
+            {
+                current=pop(&S);
+                printf("%d",current->data);
+                current=current->right;
+            }
+            else{
+                done=1;
+            }
+        }
+    }
+}
